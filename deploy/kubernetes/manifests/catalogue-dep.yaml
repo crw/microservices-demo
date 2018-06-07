@@ -17,16 +17,16 @@ spec:
       - name: catalogue
         image: weaveworksdemos/catalogue:0.3.5
         env:
-          - name: db_username
+          - name: username
             valueFrom:
               secretKeyRef:
                 name: "rds-user-creds"
-                key: username
-          - name: db_password
+                key: db_username
+          - name: password
             valueFrom:
               secretKeyRef:
                 name: "rds-user-creds"
-                key: password
+                key: db_password
         command: ["$(GOPATH)/src/github.com/microservices-demo/catalogue/cmd/cataloguesvc/catalogue"]
         args:
           - -DSN
