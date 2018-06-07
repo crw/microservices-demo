@@ -20,16 +20,17 @@ spec:
           - name: username
             valueFrom:
               secretKeyRef:
-                name: 'rds-user-creds'
+                name: "rds-user-creds"
                 key: username
           - name: password
             valueFrom:
               secretKeyRef:
-                name: 'rds-user-creds'
+                name: "rds-user-creds"
                 key: password
+        command: ["./catalogue"]
         args:
           - -DSN
-          - '$(username):$(password)@tcp(catalogdb-beautiful-gopher.c1rdvgzogyh3.us-west-2.rds.amazonaws.com:3306)/socksdb'
+          - "$(username):$(password)@tcp(catalogdb-beautiful-gopher.c1rdvgzogyh3.us-west-2.rds.amazonaws.com:3306)/socksdb"
         resources:
           limits:
             cpu: 100m
