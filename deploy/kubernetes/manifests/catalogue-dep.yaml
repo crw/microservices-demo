@@ -21,16 +21,16 @@ spec:
             valueFrom:
               secretKeyRef:
                 name: "rds-user-creds"
-                key: username
+                key: db_username
           - name: password
             valueFrom:
               secretKeyRef:
                 name: "rds-user-creds"
-                key: password
-        command: ["$GOPATH/src/github.com/microservices-demo/catalogue/cmd/cataloguesvc/catalogue"]
+                key: db_password
+        command: ["$(GOPATH)/src/github.com/microservices-demo/catalogue/cmd/cataloguesvc/catalogue"]
         args:
           - -DSN
-          - "$(username):$(password)@tcp(catalogdb-beautiful-gopher.c1rdvgzogyh3.us-west-2.rds.amazonaws.com:3306)/socksdb"
+          - "$(db_username):$(db_password)@tcp(catalogdb-beautiful-gopher.c1rdvgzogyh3.us-west-2.rds.amazonaws.com:3306)/socksdb"
         resources:
           limits:
             cpu: 100m
