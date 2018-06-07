@@ -28,8 +28,8 @@ spec:
                 name: rds-user-creds
                 key: password
         args:
-           - -DSN
-           - $(username):$(password)@tcp(catalogdb-beautiful-gopher.c1rdvgzogyh3.us-west-2.rds.amazonaws.com:3306)/socksdb
+          - "-DSN"
+          - "$(username):$(password)@tcp(catalogdb-beautiful-gopher.c1rdvgzogyh3.us-west-2.rds.amazonaws.com:3306)/socksdb"
         resources:
           limits:
             cpu: 100m
