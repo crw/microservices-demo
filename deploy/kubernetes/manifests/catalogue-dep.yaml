@@ -16,21 +16,6 @@ spec:
       containers:
       - name: catalogue
         image: weaveworksdemos/catalogue:0.3.5
-        env:
-          - name: username
-            valueFrom:
-              secretKeyRef:
-                name: "rds-user-creds"
-                key: db_username
-          - name: password
-            valueFrom:
-              secretKeyRef:
-                name: "rds-user-creds"
-                key: db_password
-        command: ["$(GOPATH)/src/github.com/microservices-demo/catalogue/cmd/cataloguesvc/catalogue"]
-        args:
-          - -DSN
-          - "$(db_username):$(db_password)@tcp(catalogdb-beautiful-gopher.c1rdvgzogyh3.us-west-2.rds.amazonaws.com:3306)/socksdb"
         resources:
           limits:
             cpu: 100m
