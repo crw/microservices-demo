@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: user
-        image: weaveworksdemos/user:master-af5e0a7e
+        image: weaveworksdemos/user:0.4.7
         resources:
           limits:
             cpu: 300m
