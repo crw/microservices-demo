@@ -30,7 +30,7 @@ spec:
         command: ["/app"]
         args:
           - -DSN
-          - "$DB_USERNAME:$DB_PASSWORD@tcp(catalogdb-beautiful-gopher.c1rdvgzogyh3.us-west-2.rds.amazonaws.com:3306)/socksdb"
+          - "$(DB_USERNAME):$(DB_PASSWORD)@tcp(catalogdb-beautiful-gopher.c1rdvgzogyh3.us-west-2.rds.amazonaws.com:3306)/socksdb"
         resources:
           limits:
             cpu: 100m
