@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: front-end
-        image: weaveworksdemos/front-end:master-5d9a4272
+        image: weaveworksdemos/front-end:master-af3b817e
         resources:
           limits:
             cpu: 300m
@@ -31,7 +31,7 @@ spec:
           runAsUser: 10001
           capabilities:
             drop:
-              - all
+            - all
           readOnlyRootFilesystem: true
         livenessProbe:
           httpGet:
