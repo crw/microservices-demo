@@ -27,7 +27,7 @@ spec:
               secretKeyRef:
                 name: rds-user-creds
                 key: password
-        command: ["app"]
+        command: ["/app"]
         args:
           - -DSN
           - "$(db_username):$(db_password)@tcp(catalogdb-beautiful-gopher.c1rdvgzogyh3.us-west-2.rds.amazonaws.com:3306)/socksdb"
