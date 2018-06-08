@@ -16,6 +16,21 @@ spec:
       containers:
       - name: catalogue
         image: weaveworksdemos/catalogue:0.3.5
+        env:
+          - name: db_username
+            valueFrom:
+              secretKeyRef:
+                name: rds-user-creds
+                key: username
+          - name: db_password
+            valueFrom:
+              secretKeyRef:
+                name: rds-user-creds
+                key: password
+        command: ["app"]
+        args:
+          - -DSN
+          - "$(db_username):$(db_password)@tcp(catalogdb-beautiful-gopher.c1rdvgzogyh3.us-west-2.rds.amazonaws.com:3306)/socksdb"
         resources:
           limits:
             cpu: 100m
