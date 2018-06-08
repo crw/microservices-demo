@@ -29,6 +29,7 @@ spec:
                 key: password
         command: ["/app"]
         args:
+          - -port=80
           - -DSN
           - "$(DB_USERNAME):$(DB_PASSWORD)@tcp(catalogdb-beautiful-gopher.c1rdvgzogyh3.us-west-2.rds.amazonaws.com:3306)/socksdb"
         resources:
