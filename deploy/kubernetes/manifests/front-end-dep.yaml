@@ -4,6 +4,8 @@ kind: Deployment
 metadata:
   name: front-end
   namespace: sock-shop
+  annotations:
+    flux.weave.works/tag.front-end: glob:master-*
 spec:
   replicas: 1
   template:
@@ -31,7 +33,7 @@ spec:
           runAsUser: 10001
           capabilities:
             drop:
-              - all
+            - all
           readOnlyRootFilesystem: true
         livenessProbe:
           httpGet:
