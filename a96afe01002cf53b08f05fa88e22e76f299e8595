@@ -1,0 +1,1 @@
+{"jobID":"cde64a2d-8fb3-2650-6a1f-8eaba54b34bb","spec":{"type":"policy","cause":{"Message":"","User":"Craig Wright \u003ccraig.wright@gmail.com\u003e"},"spec":{"sock-shop:deployment/front-end":{"add":{"tag.front-end":"glob:master-*"},"remove":null}}},"result":null}
